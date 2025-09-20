@@ -1,0 +1,97 @@
+/* Base layout */
+.edit-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 30%, #001728 0%, #000c16 100%);
+  color: #e6faff;
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  padding-bottom: 50px;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+}
+
+/* Section title */
+.section-title {
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  color: #bfefff;
+  animation: neonPulse 6s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%,100% { filter: drop-shadow(0 0 2px #00eaff); }
+  50% { filter: drop-shadow(0 0 8px #00eaff); }
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(173, 216, 230, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.18);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(.2,.9,.2,1);
+}
+.clickable-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,200,255,0.25);
+}
+.card-top {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #bdefff;
+}
+.card-expand {
+  padding: 16px;
+  animation: fadeIn .35s ease;
+}
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+
+.chev {
+  color: #9fe4ff;
+  font-weight: 700;
+  transition: transform .3s ease;
+}
+
+/* Inputs */
+.label-title {
+  display: block;
+  font-weight: 700;
+  color: #dff7ff;
+  margin-bottom: 6px;
+}
+.form-control {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e6faff;
+}
+.form-control:focus {
+  box-shadow: 0 6px 20px rgba(0,200,255,0.15);
+  border-color: rgba(0,200,255,0.45);
+}
+
+/* Buttons */
+.btn-submit {
+  background: linear-gradient(90deg, rgba(0,170,220,0.98), rgba(0,200,255,0.9));
+  border: none;
+  color: #001a1d;
+  font-weight: 800;
+  padding: 10px 26px;
+  box-shadow: 0 10px 30px rgba(0,200,255,0.2);
+  transition: transform .25s ease;
+}
+.btn-submit:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .card-expand { padding: 12px; }
+  .row.g-2 > [class^="col"] { margin-bottom: 6px; }
+}

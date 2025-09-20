@@ -1,0 +1,127 @@
+/* ====== Page Base ====== */
+.all-req-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #001428 0%, #000e18 100%);
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #e8f6ff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ====== Header ====== */
+.page-header h2 {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #bfefff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+}
+
+.page-header .muted {
+  color: rgba(235, 255, 255, 0.74);
+  font-size: 0.92rem;
+  margin-top: 0.25rem;
+}
+
+/* ====== Card Grid ======
+   Bootstrap handles the responsive columns:
+   col-12 (mobile), col-md-6 (tablet), col-lg-4 (desktop)
+   We add spacing and animations below.
+*/
+.row.g-4 > div {
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* ====== Request Card ====== */
+.req-card {
+  position: relative;
+  background: rgba(173, 216, 230, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(0, 200, 255, 0.05);
+  transition:
+    transform 0.35s cubic-bezier(.2, .8, .2, 1),
+    box-shadow 0.35s cubic-bezier(.2, .8, .2, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* 3D glass hover */
+.req-card:hover {
+  transform: translateY(-8px) scale(1.02) perspective(1000px) rotateX(1deg);
+  box-shadow: 0 20px 60px rgba(0, 200, 255, 0.15);
+}
+
+/* Futuristic glowing border on hover */
+.req-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0,200,255,0.18), rgba(173,216,230,0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.req-card:hover::before {
+  opacity: 1;
+}
+
+/* ====== Card Content ====== */
+.req-card .reason {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #eafcff;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 6px rgba(0, 200, 255, 0.25);
+}
+
+.req-card .meta {
+  font-size: 0.9rem;
+  color: rgba(215, 245, 255, 0.78);
+}
+
+.req-card .time {
+  font-size: 0.82rem;
+  color: rgba(180, 220, 255, 0.65);
+}
+
+/* ====== Animations ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ====== Responsive Tweaks ====== */
+@media (max-width: 768px) {
+  .req-card {
+    padding: 1rem;
+  }
+  .req-card .reason {
+    font-size: 1rem;
+  }
+  .req-card .meta {
+    font-size: 0.85rem;
+  }
+  .req-card .time {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .page-header h2 {
+    font-size: 1.5rem;
+  }
+}

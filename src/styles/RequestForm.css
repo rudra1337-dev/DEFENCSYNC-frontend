@@ -1,0 +1,171 @@
+/* Base page */
+.request-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #001428 0%, #000d16 100%);
+  color: #e6faff;
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* container */
+.container { max-width: 1100px; }
+
+/* Titles */
+.section-title h2 {
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  color: #bfefff;
+  margin-bottom: 6px;
+}
+.section-subtitle {
+  font-weight: 800;
+  color: #bfefff;
+}
+
+/* small glass card */
+.glass-card {
+  background: rgba(180, 220, 240, 0.04);
+  border: 1px solid rgba(0, 200, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 190, 230, 0.04);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+}
+.small-card { padding: 14px; }
+
+/* label title */
+.label-title {
+  display:block;
+  font-weight:700;
+  color: #dff7ff;
+  margin-bottom: 8px;
+}
+
+/* clickable card for weapons/vehicles */
+.clickable-card {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.clickable-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 50px rgba(0,200,255,0.08);
+}
+.card-top { padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.02); }
+.card-title { font-size: 1.05rem; font-weight: 800; color: #bdefff; }
+
+/* expand area */
+.card-expand {
+  max-height: 0;
+  transition: max-height .45s cubic-bezier(.2,.9,.2,1), padding .35s;
+  padding: 0 8px;
+}
+.clickable-card.open .card-expand {
+  max-height: 420px; /* big enough for multiple rows */
+  padding: 8px;
+}
+
+/* chevron */
+.chev { color: #9fe4ff; font-weight:700; }
+
+/* input rows inside cards */
+.input-row label { color: #d7f4ff; }
+.input-row .form-control {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #e6faff;
+}
+.input-row .form-control::placeholder { color: rgba(200,230,245,0.35); }
+
+/* invalid feedback style (Bootstrap classes used) */
+.invalid-feedback { color: #ffc2c2; }
+
+/* buttons */
+.btn-submit {
+  background: linear-gradient(90deg, rgba(0,170,220,0.98), rgba(0,200,255,0.9));
+  border: none;
+  color: #002022;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,200,255,0.12);
+}
+.btn-submit:hover { transform: translateY(-4px); }
+
+/* small-screen adjustments */
+@media (max-width: 767.98px) {
+  .container { padding-left: 14px; padding-right: 14px; }
+  .card-top { padding: 10px 12px; }
+  .card-expand { padding: 6px 8px; }
+}
+
+/* accessibility & focus */
+.form-control:focus {
+  box-shadow: 0 6px 20px rgba(0,200,255,0.08);
+  border-color: rgba(0,200,255,0.45);
+  outline: none;
+}
+
+/* neon subtle animation for section title */
+.section-title h2 {
+  animation: neonShift 6s ease-in-out infinite;
+}
+@keyframes neonShift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(15deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+
+
+
+
+
+
+
+
+
+/* RequestForm.css additions */
+.glass-card {
+  background: rgba(173, 216, 230, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(173, 216, 230, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+.glass-card.open {
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.clickable-card:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+.chev {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll-area {
+  max-height: 250px;        /* Scroll if long list */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+}

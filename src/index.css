@@ -1,0 +1,7 @@
+:root {
+  --glass-bg: rgba(200,230,255,0.10);
+  --glass-border: rgba(200,230,255,0.25);
+  --accent: rgba(64,160,255,0.95);
+  --text-weak: rgba(220,235,255,0.9);
+  --card-shadow: 0 8px 30px rgba(20,40,80,0.18);
+}

@@ -1,0 +1,123 @@
+/* Background */
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #001f3f, #001122);
+  padding: 20px;
+}
+
+/* Glassmorphism Card */
+.signin-card {
+  background: rgba(173, 216, 230, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.signin-title {
+  text-align: center;
+  color: #e0f7ff;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Radio Buttons */
+.radio-label {
+  margin: 0 15px;
+  font-size: 16px;
+  color: #e0f7ff;
+  cursor: pointer;
+}
+
+.radio-label input {
+  margin-right: 6px;
+}
+
+/* Glass Input */
+.glass-input {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 40px 12px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+}
+
+.glass-input::placeholder {
+  color: #cfe9f6;
+}
+
+/* Eye Icon */
+.eye-icon {
+  position: absolute;
+  top: 30%;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #cfe9f6;
+}
+
+/* Error Text */
+.error-text {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Futuristic Rhombus Button */
+.rhombus-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 60px;
+  background: linear-gradient(135deg, #004d40, #00796b);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.rhombus-btn:hover {
+  background: linear-gradient(135deg, #009688, #004d40);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.8);
+}
+
+/* Extra Links */
+.extra-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.extra-links a {
+  color: #80deea;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.extra-links a:hover {
+  color: #26c6da;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

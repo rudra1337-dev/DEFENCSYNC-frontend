@@ -1,0 +1,156 @@
+/* ===== Hero Section ===== */
+.agency-hero {
+  background-color: #001428;
+}
+.flag-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(0,200,255,0.4);
+  box-shadow: 0 0 20px rgba(0,200,255,0.2);
+}
+.flag-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.agency-name {
+  font-weight: 800;
+  font-size: 2.4rem;
+  text-shadow: 0 0 15px rgba(0,200,255,0.3);
+}
+.agency-slogan {
+  font-size: 1.1rem;
+  color: #d7f5ff;
+}
+
+/* ===== Section Header ===== */
+.section-header h3 {
+  font-weight: 700;
+  color: #bfefff;
+}
+.underline {
+  width: 70px;
+  height: 3px;
+  margin: 0.3rem auto;
+  background: linear-gradient(90deg,#00d4ff,#00bfff);
+  border-radius: 2px;
+}
+
+/* ===== Base Cards ===== */
+.base-card.glass-card {
+  width: 100%;
+  max-width: 280px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(173,216,230,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,200,255,0.08);
+  box-shadow: 0 8px 28px rgba(0,200,255,0.06);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1),
+              box-shadow 0.35s cubic-bezier(.2,.8,.2,1);
+  cursor: pointer;
+  text-align: left;
+  animation: fadeInUp 0.6s ease both;
+}
+.base-card:hover {
+  transform: translateY(-8px) scale(1.02) perspective(1000px) rotateX(1deg);
+  box-shadow: 0 20px 60px rgba(0,200,255,0.18);
+}
+.base-info .base-name {
+  font-weight: 700;
+  color: #eafcff;
+  font-size: 1.1rem;
+}
+.base-info .base-location {
+  font-size: 0.9rem;
+  color: rgba(215,245,255,0.78);
+}
+.base-photo-wrap {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.base-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Add Base Card ===== */
+.add-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px dashed rgba(0,200,255,0.25);
+}
+.add-card:hover {
+  background: rgba(173,216,230,0.18);
+}
+.add-icon {
+  font-size: 3rem;
+  color: #bdf2ff;
+  line-height: 1;
+}
+.add-text {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  color: #bdf2ff;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px) scale(.98);}
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .base-card.glass-card { max-width: 100%; }
+  .agency-name { font-size: 1.9rem; }
+}
+@media (max-width: 480px) {
+  .agency-name { font-size: 1.6rem; }
+  .flag-circle { width: 65px; height: 65px; }
+}
+
+
+
+
+
+
+import React from "react";
+import "../styles/AgencyDetail.css";
+
+export default function BaseCard({ base, onOpen, isAdd = false }) {
+  return (
+    <article
+      className="base-card glass-card d-flex flex-column align-items-center justify-content-center"
+      role="button"
+      onClick={onOpen}
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onOpen()}
+      aria-label={isAdd ? "Add new base" : base.name}
+    >
+      {isAdd ? (
+        <>
+          <span className="add-icon">＋</span>
+          <p className="add-text">Add Base</p>
+        </>
+      ) : (
+        <div className="d-flex align-items-center gap-3">
+          <div className="base-photo-wrap">
+            <img src={base.photo} alt={base.name} className="base-photo" />
+          </div>
+          <div className="base-info">
+            <div className="base-name">{base.name}</div>
+            <div className="base-location">{base.location}</div>
+          </div>
+        </div>
+      )}
+    </article>
+  );
+}

@@ -1,0 +1,268 @@
+.base-detail-page {
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #e8f6ff;
+  background: linear-gradient(180deg,#001428 0%,#001122 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Section headers */
+.section-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #b7eaff;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.section-header::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  background: rgba(0,200,255,0.5);
+  border-radius: 2px;
+}
+
+/* Intro */
+.base-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #eafcff;
+}
+.photo-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,200,220,0.18);
+}
+
+/* Glass Cards */
+.glass-card {
+  background: rgba(173, 216, 230, 0.08);
+  border: 1px solid rgba(0, 200, 255, 0.1);
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0, 200, 220, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform .35s, box-shadow .35s;
+  transform-style: preserve-3d;
+}
+.glass-card:hover {
+  transform: translateY(-10px) rotateX(2deg) scale(1.02);
+  box-shadow: 0 22px 60px rgba(0, 200, 255, 0.2);
+}
+
+.strength-card .value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #9fe4ff;
+  margin-top: 0.5rem;
+}
+
+.weapon-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Back button */
+.back-btn {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.6rem 2rem;
+  border-radius: 40px;
+  transition: all .3s;
+}
+.back-btn:hover {
+  background: rgba(0, 200, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0,200,255,0.25);
+}
+
+/* Animations */
+.fade-in-up {
+  animation: fadeInUp .55s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .weapon-img { height: 160px; }
+}
+@media (max-width: 576px) {
+  .weapon-img { height: 140px; }
+  .base-title { font-size: 1.5rem; }
+}
+
+
+
+
+
+
+
+
+
+.base-detail-page {
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #e8f6ff;
+  background: linear-gradient(180deg,#001428 0%,#000e1c 100%);
+  min-height: 100vh;
+}
+
+/* ===== Headings ===== */
+.section-header {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #aee9ff;
+  margin-bottom: 1.5rem;
+}
+.section-header.left { text-align: left; }
+
+/* Intro adjustments */
+.intro-text { text-align: left; }
+.intro-img {
+  width: 85%;               /* smaller on large screens */
+  max-width: 340px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Glass cards */
+.glass-card {
+  background: rgba(173, 216, 230, 0.08);
+  border: 1px solid rgba(0, 200, 255, 0.15);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0, 200, 220, 0.15);
+  padding: 1.5rem;
+  transition: transform .35s, box-shadow .35s;
+}
+.glass-card:hover {
+  transform: translateY(-6px) rotateX(1deg) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 200, 255, 0.25);
+}
+
+.strength-card .value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #9fe4ff;
+}
+
+.weapon-img.small {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Back button */
+.back-btn {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.6rem 2rem;
+  border-radius: 40px;
+  transition: all .3s;
+}
+.back-btn:hover {
+  background: rgba(0, 200, 255, 0.12);
+  box-shadow: 0 0 15px rgba(0,200,255,0.25);
+}
+
+/* Fade-in */
+.fade-in-up {
+  animation: fadeInUp .55s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 767.98px) {        /* Mobile */
+  .intro-section .row {
+    flex-direction: column;           /* stacked */
+  }
+  .intro-img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+@media (min-width: 768px) {           /* Tablet+ */
+  .intro-section .row {
+    flex-direction: row;              /* side-by-side */
+  }
+}
+@media (max-width: 576px) {
+  .base-title { font-size: 1.5rem; }
+  .weapon-img.small { height: 130px; }
+}
+
+
+
+
+
+
+
+
+.weapon-card,
+.vehicle-card {
+  display: flex;            /* backup for older browsers */
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  transition: transform .2s;
+}
+
+.weapon-card:hover,
+.vehicle-card:hover {
+  transform: translateY(-4px);
+}
+
+.weapon-img.small {
+  max-width: 120px;         /* limit image size */
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 575.98px) {      /* phones */
+  .weapon-img.small {
+    margin-top: 1rem;       /* space when stacked vertically */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.weapon-card,
+.vehicle-card {
+  display: flex;              /* backup for browsers without bootstrap */
+  flex-direction: row;        /* force horizontal */
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;                  /* extra spacing */
+  flex-wrap: nowrap;          /* keep text + image on one line */
+}
+
+.weapon-img.small {
+  width: 120px;               /* or any max width you like */
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
