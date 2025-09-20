@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import profilePic from "../assets/profile.jpg"; // 👈 apna image import
+import profilePic from "../assets/profile.jpg"; // Profile image
+import brandLogo from "../assets/logo.jpg"; // 👈 Add your brand logo here
 
 function Navbar() {
   return (
@@ -8,8 +9,15 @@ function Navbar() {
       <nav className="navbar navbar-dark bg-dark fixed-top">
         <div className="container d-flex justify-content-between align-items-center">
           
-          {/* Brand */}
-          <Link className="navbar-brand brand" to="/">Rudra</Link>
+          {/* Brand Image instead of text */}
+          <Link className="navbar-brand brand" to="/">
+            <img 
+              src={brandLogo} 
+              alt="Brand Logo" 
+              className="brand-logo" 
+              style={{ height: "40px" }} // Adjust size as needed
+            />
+          </Link>
 
           {/* 🔹 Offcanvas toggler - only visible on small devices */}
           <button
