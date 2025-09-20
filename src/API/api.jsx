@@ -1,7 +1,7 @@
 
 
 // Set the base URL of your backend
-const API_BASE_URL = "http://localhost:5000/api"; // adjust if deployed
+const API_BASE_URL = "https://defencsync-backend.onrender.com/api"; // adjust if deployed
 
 
 
